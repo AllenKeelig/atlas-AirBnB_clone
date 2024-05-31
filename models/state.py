@@ -13,7 +13,7 @@ this is part of a larger application and manages different models.
 '''
 
 
-class BaseModel:
+class State(BaseModel):
     '''
     Base model class for all entities in the application
     '''
