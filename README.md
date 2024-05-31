@@ -43,4 +43,14 @@ Similarly, to use **kwargs in a function, you prefix the parameter name with dou
 How to handle named arguments in a function
 Handling named arguments in a function in Python can be achieved through the use of *args and **kwargs. These features allow functions to accept a variable number of arguments, which can be particularly useful when the exact number or order of arguments is not known in advance.
 
+Open the Command Interpreter: Launch the terminal or command-line interface of your choice.
+Understand the Prompt: Look for the prompt symbol, which indicates that the command interpreter is ready to receive commands. On FireCMD, the default prompt is ~>.
+Type Commands: Type the command you wish to execute and press Enter. For example, to print "Hello World" in bold using FireCMD's echohtml command, you would type echohtml <b>Hello World</b> and press Enter.
+Interpret Output: After pressing Enter, the command interpreter will execute the command and display the result. If the command is invalid, it will likely display an error message indicating that the command was not recognized.
+
+Examples
+Listing Files: To list all files in the current directory, you would use the ls command on Unix-like systems or dir on Windows.
+Changing Directories: To navigate to a different directory, use the cd command followed by the path to the directory. For example, cd /path/to/directory.
+Creating a Directory: To create a new directory, use the mkdir command followed by the name of the directory. For example, mkdir new_directory.
+
 
