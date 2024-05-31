@@ -14,7 +14,9 @@ this is part of a larger application and manages different models.
 
 
 class BaseModel:
-    ''' Base model class for all entities in the application '''
+    '''
+    Base model class for all entities in the application
+    '''
 
     def __init__(self, id: int):
         self.id = id
