@@ -38,7 +38,7 @@ def delete(self):
 
 
 def __str__(self):
-    '''Returns a string representation of the model instance.
-    Includes the model's id, creation timestamp, and last update timestamp.
-    '''
-    return f"{self.__class__.__name__}({self.id}, Created at: {self.created_at}, Updated at: {self.updated_at})"
+    """Returns a concise string representation of the model instance."""
+    return "{}({}) - Created at: {}, Last updated at: {}".format(
+        self.__class__.__name__, self.id, self.created_at, self.updated_at
+    )
