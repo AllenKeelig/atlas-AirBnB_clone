@@ -34,7 +34,7 @@ def delete(self):
     by setting the updated_at timestamp to None.
     This method simulates deleting the record from a database.
     '''
-  self.updated_at = None
+    self.updated_at = None
 
 
 def __str__(self):
