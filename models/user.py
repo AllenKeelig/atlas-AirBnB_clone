@@ -2,6 +2,7 @@
 
 import sys
 
+
 class User:
     def __init__(self, first_name, last_name, email, password):
         self.first_name = first_name
@@ -9,14 +10,13 @@ class User:
         self.email = email
         self.password = password
 
-
     def greet(self, custom_message=None):
         '''git
         generate a greeting message for the user.
-        
+
         Parameters:
-        - custom_message (str): an optional custom message to append to the greeting.
-        
+        - custom_message (str): an optional message to append to the greeting
+
         Returns:
         - str: a personalized greeting message.
         '''
@@ -25,8 +25,7 @@ class User:
             return f"{custom_message}, {full_name}"
         else:
             return f"Hello, {full_name}!"
-        
-        
+
     def create_user(first_name, last_name, email, password):
         '''
         create a new user profile.
@@ -41,14 +40,14 @@ class User:
         - User: a new user object represting the created profile.
         '''
         return User(first_name, last_name, email, password)
-    
-    
+
     def display_users(users):
         '''
         display information about the given user.
 
         parameters:
-        - users (list of user objects): a list of user objects to display information
+        - users (list of user objects): a list of user objects
+        to display information
         '''
         for user in users:
             print(f"Name: {user.fist_name} {user.last_name}")
