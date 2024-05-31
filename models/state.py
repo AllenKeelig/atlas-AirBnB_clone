@@ -6,7 +6,7 @@ this module define the state class, which is a subclass of BaseModel,
 which represents states that can contain multiple cities in the application.
 
 classes:
-a class that inherits from BaseModel
+state: a class that inherits from BaseModel
 
 usage:
 this is part of a larger application and manages different modelss
