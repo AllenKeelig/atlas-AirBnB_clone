@@ -8,7 +8,7 @@ which represents states that can contain multiple cities in the application.
 classes:
 a class that inherits from BaseModel
 
-Usage:
+usage:
 this is part of a larger application and manages different modelss
 '''
 
