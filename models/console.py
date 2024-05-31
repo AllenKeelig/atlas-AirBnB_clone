@@ -10,7 +10,7 @@ import re
 
 class HBNBCommand(cmd.Cmd):
     prompt = "(hbnb)"
-  
+
 
 def do EOF(self, *args):
 '''end of file command to exit program'''
