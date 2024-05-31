@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-#module for state.py
+# module for state.py
 
 '''
 defines state class which is a subclass of BaseModel.
