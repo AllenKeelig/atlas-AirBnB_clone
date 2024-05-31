@@ -14,10 +14,13 @@ this is part of a larger application and manages different models.
 
 
 class State(BaseModel):
-    '''
-    Base model class for all entities in the application
-    '''
+    """Represent a state
 
+    Attributes:
+        name (str): The name of the state
+
+    """
+    name = ""
     def __init__(self, id: int):
         self.id = id
 
