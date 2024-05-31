@@ -31,6 +31,7 @@ def delete(self):
     '''
   self.updated_at = None
 
+
 def __str__(self):
     '''Returns a string representation of the model instance.
     Includes the model's id, creation timestamp, and last update timestamp.
