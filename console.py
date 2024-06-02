@@ -29,15 +29,21 @@ class HBNBCommand(cmd.Cmd):
         self.storage = storage or models.storage  # Fallback to models.storage if not provided
 
     def do_quit(self, line):
-        """Quit command."""
+        """
+        Quit command.
+        """
         return True
 
     def do_EOF(self, line):
-        """EOF command."""
+        """
+        EOF command.
+        """
         return True
 
     def my_errors(self, line, num_of_args):
-        """Displays error messages to user"""
+        """
+        Displays error messages to the user.
+        """
         classes = ["BaseModel", "User", "State", "City", "Amenity", "Place", "Review"]
         msg = ["** class name missing **",
                "** class doesn't exist **",
@@ -78,12 +84,14 @@ class HBNBCommand(cmd.Cmd):
 
     def handle_empty_line(self, line):
         """
-        Eliminates empty lines
+        Eliminates empty lines.
         """
         return False
 
     def do_create(self, line):
-        """Creates a new instance of a class"""
+        """
+        Creates a new instance of a class.
+        """
         if (self.my_errors(line, 1) == 1):
             return
         args = line.split(" ")
@@ -96,7 +104,9 @@ class HBNBCommand(cmd.Cmd):
             print("** class doesn't exist **")
 
     def do_show(self, line):
-        """Prints a string representation of an instance"""
+        """
+        Prints a string representation of an instance.
+        """
         if (self.my_errors(line, 2) == 1):
             return
         args = line.split()
@@ -107,7 +117,9 @@ class HBNBCommand(cmd.Cmd):
         print(d[key])
 
     def do_destroy(self, line):
-        """Deletes an instance of a certain class"""
+        """
+        Deletes an instance of a certain class.
+        """
         if (self.my_errors(line, 2) == 1):
             return
         args = line.split()
@@ -119,7 +131,9 @@ class HBNBCommand(cmd.Cmd):
         self.storage.save()
 
     def do_all(self, line):
-        """Shows all instances, or instances of a certain class"""
+        """
+        Shows all instances, or instances of a certain class.
+        """
         d = self.storage.all()
         if not line:
             print([str(x) for x in d.values()])
@@ -130,7 +144,9 @@ class HBNBCommand(cmd.Cmd):
         print([str(v) for v in d.values() if v.__class__.__name__ == args[0]])
 
     def do_update(self, line):
-        """Updates an instance based on the class name and id"""
+        """
+        Updates an instance based on the class name and id.
+        """
         if (self.my_errors(line, 4) == 1):
             return
         args = line.split()
@@ -160,7 +176,7 @@ class HBNBCommand(cmd.Cmd):
 
     def my_count(self, class_n):
         """
-        Method counts instances of a certain class
+        Method counts instances of a certain class.
         """
         count_instance = 0
         for instance_object in self.storage.all().values():
@@ -169,7 +185,9 @@ class HBNBCommand(cmd.Cmd):
         print(count_instance)
 
     def default(self, line):
-        """Method to take care of following commands"""
+        """
+        Method to take care of following commands.
+        """
         names = ["BaseModel", "User", "State", "City", "Amenity", "Place", "Review"]
         commands = {
             "all": self.do_all,
