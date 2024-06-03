@@ -11,9 +11,9 @@ place: name, description, information about the place such as number of rooms.
 usage:
 assist with the management of different models like users.
 '''
+from models.base_model import BaseModel
 
-
-class BaseModel:
+class Place(BaseModel):
     '''
     Base model class for all entities in the application
     '''

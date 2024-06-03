@@ -11,9 +11,10 @@ State: state in which location resides in
 usage:
 assist with the management of different models like users.
 '''
+from models.base_model import BaseModel
 
 
-class BaseModel:
+class State(BaseModel):
     '''
     Base model class for all entities in the application
     '''
