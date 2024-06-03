@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/envpython3
 """
 Unit tests for console using Mock module from python standard library
 Checks console for capturing stdout into a StringIO object
