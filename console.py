@@ -9,6 +9,7 @@ import json
 import re
 import models
 from models.base_model import BaseModel
+import models.engine
 from models.user import User
 from models.state import State
 from models.city import City
@@ -217,5 +218,5 @@ class HBNBCommand(cmd.Cmd):
                 commands[args[1]](args[0] + " " + params.groups()[0] + " " + rest[0] + " " + rest[1])
 
 if __name__ == '__main__':
-    cli = HBNBCommand(storage=models.storage)
+    cli = HBNBCommand(storage=models.engine.FileStorage)
     cli.cmdloop()
