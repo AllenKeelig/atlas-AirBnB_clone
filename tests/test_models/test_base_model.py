@@ -3,32 +3,48 @@
 Test suits for the base model
 """
 
-import unittest
-from models.base_model import BaseModel
+import uuid
+from datetime import datetime
 
-
-class TestBaseModel(unittest.TestCase):
+class BaseModel:
     """
-    Tests attributes of the base model
+    Base class for other classes.
     """
 
-    def test_basic(self):
+    def __init__(self, *args, **kwargs):
         """
-        Tests basic inputs for the BaseModel class
+        Initializes BaseModel instance.
         """
-        my_model = BaseModel()
-        my_model.name = "ALX"
-        my_model.number = 89
-        self.assertEqual([my_model.name, my_model.number], ["ALX", 89])
+        if kwargs:
+            for key, value in kwargs.items():
+                if key == 'created_at' or key == 'updated_at':
+                    setattr(self, key, datetime.strptime(value, '%Y-%m-%dT%H:%M:%S.%f'))
+                elif key != '__class__':
+                    setattr(self, key, value)
+        else:
+            self.id = str(uuid.uuid4())
+            self.created_at = datetime.now()
+            self.updated_at = datetime.now()
 
-    def test_datetime(self):
+    def __str__(self):
         """
-        Tests for correct datetime format
+        Returns string representation of BaseModel instance.
         """
-        my_model = BaseModel()
-        self.assertTrue(isinstance(my_model.created_at, datetime))
-        self.assertTrue(isinstance(my_model.updated_at, datetime))
+        return "[{}] ({}) {}".format(type(self).__name__, self.id, self.__dict__)
 
+    def save(self):
+        """
+        Updates the public instance attribute updated_at
+        with the current datetime.
+        """
+        self.updated_at = datetime.now()
 
-if __name__ == '__main__':
-    unittest.main()
+    def to_dict(self):
+        """
+        Returns a dictionary containing all keys/values of __dict__ of the instance.
+        """
+        dict_copy = self.__dict__.copy()
+        dict_copy['__class__'] = type(self).__name__
+        dict_copy['created_at'] = self.created_at.isoformat()
+        dict_copy['updated_at'] = self.updated_at.isoformat()
+        return dict_copy
