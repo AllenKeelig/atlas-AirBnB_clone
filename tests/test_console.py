@@ -4,6 +4,8 @@ Unit tests for console using Mock module from python standard library
 Checks console for capturing stdout into a StringIO object
 """
 
+import os
+import sys
 import unittest
 from unittest.mock import create_autospec, patch
 from io import StringIO
