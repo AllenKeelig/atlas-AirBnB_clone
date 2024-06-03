@@ -12,7 +12,7 @@ class Review(BaseModel):
         text (str): = the text of the review
     """
     def __init__(self, kwargs):
-        super().__init__(**kwargs):
+        super().__init__(**kwargs)
         if "place_id" not in kwargs:
             self.place_id = ""
         if "user_id" not in kwargs:

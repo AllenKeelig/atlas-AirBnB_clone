@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """Module for amenity class"""
 
-from models.Base_model import BaseModel
+from models.base_model import BaseModel
 
 
 class Amenity(BaseModel):
