@@ -39,6 +39,5 @@ class BaseModel:
 
     def __str__(self):
         """Returns a concise string representation of the model instance."""
-        return "{}({}) - Created at: {}, Last updated at: {}".format(
-            self.__class__.__name__, self.id, self.created_at, self.updated_at
-        )
+        return "{}({})".format(self.__class__.__name__, self.id)
+
