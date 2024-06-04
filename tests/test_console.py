@@ -1,11 +1,11 @@
 #!/usr/bin/envpython3
 """
-Unit tests for console using Mock module from python standard library
-Checks console for capturing stdout into a StringIO object
+Unit tests for console.py
 """
 
 import os
 import sys
+import json
 import unittest
 from unittest.mock import create_autospec, patch
 from io import StringIO
@@ -21,7 +21,7 @@ from models.review import Review
 
 class TestConsole(unittest.TestCase):
     """
-    Unittest for the console model
+    base class for testing console
     """
 
     def setUp(self):

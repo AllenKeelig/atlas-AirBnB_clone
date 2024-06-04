@@ -1,27 +1,28 @@
 #!/usr/bin/python3
 """defines the city class
 """
+
 from models.base_model import BaseModel
 
-
 class City(BaseModel):
-    """represents a city
+    """Represents a city."""
 
-    Attributes:
-        state_id (str): state id
-        name (str): the name of the city
-    """
+    def __init__(self, state_id: str = "", name: str = "", **kwargs):
+        """
+        Initializes a City instance.
 
-
-    def __init__(self, **kwargs):
+        Args:
+            state_id (str): The state id.
+            name (str): The name of the city.
+            **kwargs: Additional keyword arguments.
+        """
         super().__init__(**kwargs)
-        if "state_id" not in kwargs:
-            self.state_id = ""
-        if "name" not in kwargs:
-            self.name = ""
+        self.state_id = state_id
+        self.name = name
 
 # Example usage
 if __name__ == "__main__":
     city = City(state_id="NY", name="New York")
     print(city.state_id)  # Should output: NY
     print(city.name)      # Should output: New York
+
