@@ -29,6 +29,9 @@ class HBNBCommand(cmd.Cmd):
         super().__init__()
         self.storage = storage or models.storage  # Fallback to models.storage if not provided
 
+    def __str__(self) -> str:
+        return super().__str__()
+    
     def do_quit(self, line):
         """
         Quit command.
