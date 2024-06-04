@@ -1,3 +1,4 @@
+{}
 #!/usr/bin/python3
 """
 Module file_storage serializes and deserializes JSON types
