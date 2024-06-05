@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 '''models base_model module'''
 
-import models
 from uuid import uuid4
 from datetime import datetime
 
@@ -24,6 +23,15 @@ class BaseModel:
         self.created_at = datetime.utcnow()
         self.updated_at = datetime.utcnow()
 
+    def to_dict(self):
+        '''Converts the model instance to a dictionary.'''
+        return {
+            'id': self.id,
+            'created_at': self.created_at.isoformat(),
+            'updated_at': self.updated_at.isoformat(),
+            'is_deleted': self.is_deleted
+        }
+
     def save(self):
         '''Updates the updated_at timestamp to the current UTC time.
         This method simulates updating the record in a database.
@@ -39,5 +47,6 @@ class BaseModel:
 
     def __str__(self):
         """Returns a concise string representation of the model instance."""
-        return "{}({})".format(self.__class__.__name__, self.id)
-
+        return "[{}]".format(
+            self.__class__.__name__
+        )
