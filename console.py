@@ -27,7 +27,7 @@ class HBNBCommand(cmd.Cmd):
 
     def __init__(self, storage=None):
         super().__init__()
-        self.storage = storage or models.storage  # Fallback to models.storage if not provided
+        self.storage = models.engine.FileStorage()  # Fallback to models.storage if not provided
 
     def __str__(self) -> str:
         return super().__str__()
