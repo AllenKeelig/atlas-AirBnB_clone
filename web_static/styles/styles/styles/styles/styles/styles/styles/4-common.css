@@ -1,0 +1,17 @@
+html, body {
+    height: 100%;
+}
+
+/*common styles*/
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    color: #484848;
+    font-family: Circular, "helvetica Neue", Helvetica,Arial, Helvetica, sans-serif;
+}
+/* container style */
+    .container {
+    max-width: 1000px;
+    margin: 30px;
+}
